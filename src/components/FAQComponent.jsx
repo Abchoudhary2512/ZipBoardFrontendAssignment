@@ -37,9 +37,7 @@ export default function Component() {
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div
-          className={`absolute inset-0 ${
-            darkMode ? "bg-white" : "bg-black"
-          }`}
+          className={`absolute inset-0 ${darkMode ? "bg-white" : "bg-black"}`}
           style={{
             backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)`,
             backgroundSize: "20px 20px",
@@ -154,7 +152,11 @@ export default function Component() {
                           : "bg-gray-100 text-gray-500 group-hover:bg-gray-200 group-hover:text-gray-700"
                       }`}
                     >
-                      {expandedIndex === index ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
+                      {expandedIndex === index ? (
+                        <Minus className="w-5 h-5" />
+                      ) : (
+                        <Plus className="w-5 h-5" />
+                      )}
                     </div>
                   </button>
 
