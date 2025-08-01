@@ -45,15 +45,15 @@ export default function Component() {
         />
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-6 py-12 sm:px-8 sm:py-16 lg:py-24">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         {/* Header */}
-        <div className="text-center mb-14 sm:mb-20">
-          <div className="flex justify-center mb-8">
+        <div className="text-center mb-10">
+          <div className="flex justify-center mb-6">
             <Button
               onClick={toggleDarkMode}
               variant="outline"
               size="icon"
-              className={`h-14 w-14 rounded-full border-2 transition-all duration-300 hover:scale-110 ${
+              className={`h-12 w-12 rounded-full border-2 transition-all duration-300 hover:scale-110 ${
                 darkMode
                   ? "border-gray-700 bg-gray-800/50 hover:bg-gray-700 backdrop-blur-sm shadow-lg shadow-gray-900/20"
                   : "border-gray-300 bg-white/80 hover:bg-gray-50 backdrop-blur-sm shadow-lg shadow-gray-900/10"
@@ -61,15 +61,15 @@ export default function Component() {
               aria-label="Toggle dark mode"
             >
               {darkMode ? (
-                <Sun className="h-6 w-6 text-yellow-400 transition-transform duration-300" />
+                <Sun className="h-5 w-5 text-yellow-400" />
               ) : (
-                <Moon className="h-6 w-6 text-gray-600 transition-transform duration-300" />
+                <Moon className="h-5 w-5 text-gray-600" />
               )}
             </Button>
           </div>
 
           <h1
-            className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 tracking-tight ${
+            className={`text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-2 ${
               darkMode
                 ? "bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent"
                 : "bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 bg-clip-text text-transparent"
@@ -79,7 +79,7 @@ export default function Component() {
           </h1>
 
           <p
-            className={`text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed ${
+            className={`text-base sm:text-lg max-w-xl mx-auto ${
               darkMode ? "text-gray-400" : "text-gray-600"
             }`}
           >
@@ -90,7 +90,7 @@ export default function Component() {
         {/* FAQ Section */}
         <div className="mx-auto max-w-4xl">
           <div
-            className={`rounded-3xl p-6 sm:p-8 lg:p-12 backdrop-blur-md border shadow-xl ${
+            className={`rounded-2xl p-6 sm:p-8 lg:p-10 backdrop-blur-md border shadow-xl ${
               darkMode
                 ? "bg-gray-800/40 border-gray-700/60 shadow-black/20"
                 : "bg-white/70 border-gray-200/50 shadow-gray-900/10"
@@ -100,7 +100,7 @@ export default function Component() {
               {faqs.map((faq, index) => (
                 <div
                   key={index}
-                  className={`group rounded-2xl transition-all duration-300 ${
+                  className={`group rounded-xl transition-all duration-300 ${
                     expandedIndex === index
                       ? darkMode
                         ? "bg-gray-700/40 shadow-lg shadow-gray-900/20"
@@ -111,11 +111,11 @@ export default function Component() {
                   <button
                     onClick={() => toggleFAQ(index)}
                     aria-expanded={expandedIndex === index}
-                    className="w-full text-left p-5 sm:p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 rounded-2xl focus:outline-none transition-all"
+                    className="w-full text-left p-5 sm:p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 rounded-xl focus:outline-none transition-all"
                   >
                     <div className="flex items-start gap-4 w-full">
                       <span
-                        className={`flex items-center justify-center w-8 h-8 rounded-full text-sm font-semibold shrink-0 ${
+                        className={`flex items-center justify-center w-7 h-7 rounded-full text-xs font-semibold shrink-0 ${
                           expandedIndex === index
                             ? darkMode
                               ? "bg-white text-gray-900"
@@ -128,7 +128,7 @@ export default function Component() {
                         {index + 1}
                       </span>
                       <h3
-                        className={`text-lg sm:text-xl font-semibold leading-tight flex-1 ${
+                        className={`text-base sm:text-lg font-semibold leading-snug flex-1 ${
                           expandedIndex === index
                             ? darkMode
                               ? "text-white"
@@ -142,7 +142,7 @@ export default function Component() {
                       </h3>
                     </div>
                     <div
-                      className={`w-10 h-10 shrink-0 rounded-full flex items-center justify-center transition-all duration-300 ${
+                      className={`w-9 h-9 shrink-0 rounded-full flex items-center justify-center transition-all duration-300 ${
                         expandedIndex === index
                           ? darkMode
                             ? "bg-white text-gray-900 rotate-180 scale-105"
@@ -153,9 +153,9 @@ export default function Component() {
                       }`}
                     >
                       {expandedIndex === index ? (
-                        <Minus className="w-5 h-5" />
+                        <Minus className="w-4 h-4" />
                       ) : (
-                        <Plus className="w-5 h-5" />
+                        <Plus className="w-4 h-4" />
                       )}
                     </div>
                   </button>
@@ -168,14 +168,14 @@ export default function Component() {
                         : "max-h-0 opacity-0"
                     }`}
                   >
-                    <div className="px-6 pb-6 sm:px-8 sm:pb-8">
+                    <div className="px-6 pb-5 sm:px-8 sm:pb-6">
                       <div
                         className={`border-l-2 pl-5 sm:pl-8 ${
                           darkMode ? "border-gray-600" : "border-gray-300"
                         }`}
                       >
                         <p
-                          className={`text-base sm:text-lg leading-relaxed ${
+                          className={`text-sm sm:text-base leading-relaxed ${
                             darkMode ? "text-gray-300" : "text-gray-600"
                           }`}
                         >
