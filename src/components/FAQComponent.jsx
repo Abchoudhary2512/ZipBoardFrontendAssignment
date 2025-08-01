@@ -29,26 +29,24 @@ export default function Component() {
   return (
     <div
       className={`${
-        darkMode
-          ? "bg-gradient-to-br from-gray-900 via-gray-900 to-black text-gray-100"
-          : "bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900"
+        darkMode ? "bg-gray-900 text-gray-100" : "bg-white text-gray-900"
       } min-h-screen transition-all duration-500`}
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
-        <div
-          className={`absolute inset-0 ${darkMode ? "bg-white" : "bg-black"}`}
-          style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)`,
-            backgroundSize: "20px 20px",
-          }}
-        />
-      </div>
-
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-        {/* Header */}
-        <div className="text-center mb-10">
-          <div className="flex justify-center mb-6">
+        <div className="relative mb-6">
+          <div className="flex items-center justify-center">
+            <h1
+              className={`text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-center mx-auto ${
+                darkMode
+                  ? "bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent"
+                  : "bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 bg-clip-text text-transparent"
+              }`}
+            >
+              Frequently Asked Questions
+            </h1>
+          </div>
+
+          <div className="absolute right-0 top-1 sm:top-1.5">
             <Button
               onClick={toggleDarkMode}
               variant="outline"
@@ -67,24 +65,6 @@ export default function Component() {
               )}
             </Button>
           </div>
-
-          <h1
-            className={`text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-2 ${
-              darkMode
-                ? "bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent"
-                : "bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 bg-clip-text text-transparent"
-            }`}
-          >
-            Frequently Asked Questions
-          </h1>
-
-          <p
-            className={`text-base sm:text-lg max-w-xl mx-auto ${
-              darkMode ? "text-gray-400" : "text-gray-600"
-            }`}
-          >
-            Everything you need to know before getting started.
-          </p>
         </div>
 
         {/* FAQ Section */}
